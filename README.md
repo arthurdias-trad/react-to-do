@@ -9,7 +9,7 @@ It uses a global context and the Context API with a reducer to pass data between
 - Show list of current To Do's and their status
 - Mark To Do's as done or not done
 - Delete To Do's that are marked as done and remove them from the DOM
-- Persist on local storage (pending)
+- Persist changes (additions and deletions) to local storage
 - Implement Mongo database (pending)
 - Implement Express backend (pending)
 

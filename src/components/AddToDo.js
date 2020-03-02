@@ -1,13 +1,17 @@
 import React, { useState, useContext } from "react";
 import { GlobalContext } from "../context/GlobalState";
 
+const generateRandomID = () => {
+  return Math.floor(Math.random() * 100000000);
+};
+
 export const AddToDo = () => {
   const [text, setText] = useState("");
-  const { addToDo, toDoList } = useContext(GlobalContext);
+  const { addToDo } = useContext(GlobalContext);
   const submit = e => {
     e.preventDefault();
     const newToDo = {
-      id: toDoList.length + 1,
+      id: parseInt(generateRandomID()),
       text,
       done: false
     };

@@ -5,14 +5,12 @@ import { AddToDo } from "./components/AddToDo";
 import { List } from "./components/List";
 import { GlobalProvider } from "./context/GlobalState";
 
-const dummyToDos = [];
-
 function App() {
   return (
     <GlobalProvider>
       <Header />
       <div className="container">
-        <List toDos={dummyToDos} />
+        <List />
         <AddToDo />
       </div>
     </GlobalProvider>

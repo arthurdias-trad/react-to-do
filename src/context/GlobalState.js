@@ -2,14 +2,11 @@ import React, { createContext, useReducer } from "react";
 import AppReducer from "./AppReducer.js";
 
 // Initial State
-const dummyToDos = [
-  { id: 1, text: "Buy Groceries", done: true },
-  { id: 2, text: "Take out trash", done: false },
-  { id: 3, text: "Invoicing", done: false },
-  { id: 4, text: "Studying", done: false }
-];
+
+const toDoList = JSON.parse(localStorage.getItem("toDoList"));
+
 const initialState = {
-  toDoList: dummyToDos
+  toDoList: toDoList || []
 };
 
 // Create context
