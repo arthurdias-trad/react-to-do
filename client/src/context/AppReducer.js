@@ -2,33 +2,32 @@ export default (state, action) => {
   let newToDoList;
   switch (action.type) {
     case "ADD_TODO":
-      newToDoList = [...state.toDoList, action.payload];
-      localStorage.setItem("toDoList", JSON.stringify(newToDoList));
+      console.log(action.payload);
       return {
         ...state,
-        toDoList: [...newToDoList]
+        toDoList: [...state.toDoList, action.payload]
       };
     case "TOGGLE_DONE":
       newToDoList = state.toDoList.map(todo => {
-        if (todo.id === action.payload) {
+        if (todo._id === action.payload._id) {
           todo.done = !todo.done;
           return todo;
         } else {
           return todo;
         }
       });
-      localStorage.setItem("toDoList", JSON.stringify(newToDoList));
       return {
         ...state,
         toDoList: [...newToDoList]
       };
     case "DELETE_TODO":
-      newToDoList = state.toDoList.filter(todo => todo.id !== action.payload);
-      localStorage.setItem("toDoList", JSON.stringify(newToDoList));
+      newToDoList = state.toDoList.filter(todo => todo._id !== action.payload);
       return {
         ...state,
         toDoList: [...newToDoList]
       };
+    case "GET_TODOS":
+      return { ...state, loading: false, toDoList: action.payload };
     default:
       return state;
   }

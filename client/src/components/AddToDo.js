@@ -11,7 +11,6 @@ export const AddToDo = () => {
   const submit = e => {
     e.preventDefault();
     const newToDo = {
-      id: parseInt(generateRandomID()),
       text,
       done: false
     };
@@ -21,7 +20,12 @@ export const AddToDo = () => {
   return (
     <div>
       <h3 className="section-title">Add To Do</h3>
-      <form className="input-group" onSubmit={submit}>
+      <form
+        className="input-group"
+        method="POST"
+        action="/api/greeting"
+        onSubmit={submit}
+      >
         <input
           type="text"
           name="newToDo"

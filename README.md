@@ -1,6 +1,6 @@
 ## To Do App
 
-A simple app to create a To Do list built using React.
+A simple app to create a To Do list built using React, using an Express backend and MongoDB.
 It uses a global context and the Context API with a reducer to pass data between components.
 
 ## Project Specifications
@@ -10,7 +10,7 @@ It uses a global context and the Context API with a reducer to pass data between
 - Mark To Do's as done or not done
 - Delete To Do's that are marked as done and remove them from the DOM
 - Persist changes (additions and deletions) to local storage
-- Implement Mongo database (pending)
+- Implement Mongo database
 - Implement Express backend (pending)
 
 ## Usage
